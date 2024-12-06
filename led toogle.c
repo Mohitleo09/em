@@ -1,17 +1,15 @@
 #include <reg51.h>
 
-void delay(unsigned int count)
+void delay(unsigned int);
+void delay(unsigned int x)
 {
-    unsigned int i, j;
-    for(i = 0; i < count; i++)
-        for(j = 0; j < 1275; j++);
+    while(x>0){
+x--;
+    }
 }
-
-void main()
-{
-    while(1)
-    {
-        P1 = ~P1;  // Toggle LED state
-        delay(500); // Delay
+void main(){
+    while(1){
+p1^0 = 0x01;
+delay(20000);
     }
 }
